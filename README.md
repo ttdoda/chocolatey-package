@@ -1,1 +1,1 @@
-= Chocolatey Package
+# Chocolatey Package
