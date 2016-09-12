@@ -3,14 +3,14 @@
   <metadata>
     <id>teraterm</id>
     <version>4.92</version>
-    <packageSourceUrl>https://github.com/ttdoda/chocolatey-package/</packageSourceUrl>
+    <packageSourceUrl>https://github.com/TeraTermProject/chocolatey-package/</packageSourceUrl>
     <owners>TeraTerm Project</owners>
     <!-- ============================== -->
 
     <title>teraterm (Install)</title>
     <authors>T. Teranishi, TeraTerm Project</authors>
     <projectUrl>https://ttssh2.osdn.jp/</projectUrl>
-    <iconUrl>http://cdn.rawgit.com/ttdoda/chocolatey-package/master/icons/teraterm.png</iconUrl>
+    <iconUrl>http://cdn.rawgit.com/TeraTermProject/chocolatey-package/master/icons/teraterm.png</iconUrl>
     <copyright>(c) 1994-1998 T. Teranishi, 2004-2016 TeraTerm Project</copyright>
     <licenseUrl>https://ttssh2.osdn.jp/manual/en/about/copyright.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
