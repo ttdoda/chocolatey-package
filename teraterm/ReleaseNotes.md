@@ -1,4 +1,4 @@
-﻿# Tera Term
+# Tera Term
 ## 2016.08.31 (Ver 4.92)
 
  * Changes

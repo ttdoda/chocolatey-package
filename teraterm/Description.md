@@ -1,4 +1,4 @@
-﻿Tera Term is free software terminal emulator which supports:
+Tera Term is free software terminal emulator which supports:
 
  * TCP/IP (telnet, ssh, raw), serial, and named-pipe connections.
  * VT100 emulation and selected VT200/300/400/500 emulation.
