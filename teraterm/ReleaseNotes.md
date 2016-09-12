@@ -1,4 +1,4 @@
-﻿# TeraTerm
+﻿# Tera Term
 ## 2016.08.31 (Ver 4.92)
 
  * Changes
@@ -27,12 +27,12 @@
 ## 2016.08.31 (Ver 2.78)
 
  * Changes
- * When the filename includes invalid character by SCP receiving, the character is be replaced to '_'.
+ * When the filename includes invalid character by SCP receiving, the character is be replaced to "\_".
  * The default value of ScpSendDir entry is changed from "~/" to ""(empty string).
  * Strictly TTSSH command line can be checked. When a part of options(i.e. /ssh-A) is added with unnecessary character(i.e. /ssh-Axx), the string can not be recognized as an option.
 
 # TTProxy
 ## 2016.08.31 (Ver 1.0.0.23)
 
- * The -noproxy' option is added at command line. The function is same as -proxy=none://' option that is disabled proxy configuration.
+ * The '-noproxy' option is added at command line. The function is same as '-proxy=none://' option that is disabled proxy configuration.
  * The priority(order) of loading TTX plugin is changed from 0 to 10.
