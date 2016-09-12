@@ -10,7 +10,7 @@
    * changed macro command line behavior.
      * Strictly checked the syntax of command line option. When an unnecessary option is added at option back like as /Vxx, the option is not recognized.
      * The option placement can be only specified before a filename. When the option is specified after the filename, the option is recognized as macro parameter.
-   * MACRO: The params' string-typed array that is stored command line parameter(s).
+   * MACRO: The "params" string-typed array that is stored command line parameter(s).
  * Bug fixes
    * When the clipboard is read from remote host, unnecessary NUL character is added at the end of the string.
    * When the clipboard is written from remote host, empty string can not be set.
@@ -34,5 +34,5 @@
 # TTProxy
 ## 2016.08.31 (Ver 1.0.0.23)
 
- * The '-noproxy' option is added at command line. The function is same as '-proxy=none://' option that is disabled proxy configuration.
+ * The "-noproxy" option is added at command line. The function is same as "-proxy=none://" option that is disabled proxy configuration.
  * The priority(order) of loading TTX plugin is changed from 0 to 10.
