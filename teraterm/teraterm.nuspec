@@ -7,7 +7,7 @@
     <owners>TeraTerm Project</owners>
     <!-- ============================== -->
 
-    <title>teraterm (Install)</title>
+    <title>Tera Term</title>
     <authors>T. Teranishi, TeraTerm Project</authors>
     <projectUrl>https://ttssh2.osdn.jp/</projectUrl>
     <iconUrl>http://cdn.rawgit.com/TeraTermProject/chocolatey-package/master/icons/teraterm.png</iconUrl>
