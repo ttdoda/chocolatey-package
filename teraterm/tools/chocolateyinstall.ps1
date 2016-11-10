@@ -2,7 +2,7 @@
 
 $packageName= 'teraterm'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://osdn.jp/dl/ttssh2/teraterm-4.92.exe'
+$url        = 'https://osdn.net/dl/ttssh2/teraterm-4.92.exe'
 $url64      = ''
 
 $packageArgs = @{
