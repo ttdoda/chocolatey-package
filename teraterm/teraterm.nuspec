@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>teraterm</id>
-    <version>4.92</version>
+    <version>4.93</version>
     <packageSourceUrl>https://github.com/TeraTermProject/chocolatey-package/</packageSourceUrl>
     <owners>TeraTerm Project</owners>
     <!-- ============================== -->
@@ -31,43 +31,63 @@ Tera Term is free software terminal emulator which supports:
     </description>
     <releaseNotes>
 ## Tera Term
-### 2016.08.31 (Ver 4.92)
+### 2016.11.30 (Ver 4.93)
 
  * Changes
-   * added new feature which removes carriage return from end of line with pasting. The default value is off.
-     * The function can be enabled at Copy and Paste tab of Additional settings dialog.
-   * When scroll back is used, scroll state is always reseted with user input.
-   * ZMODEM: The default escaped character are added LF and GS by sending.
-   * The default value of MaxComPort setting is increased from 4 to 256.
-   * changed macro command line behavior.
-     * Strictly checked the syntax of command line option. When an unnecessary option is added at option back like as /Vxx, the option is not recognized.
-     * The option placement can be only specified before a filename. When the option is specified after the filename, the option is recognized as macro parameter.
-   * MACRO: The "params" string-typed array that is stored command line parameter(s).
+   * added 48dot icon in the keycode.exe.
  * Bug fixes
-   * When the clipboard is read from remote host, unnecessary NUL character is added at the end of the string.
-   * When the clipboard is written from remote host, empty string can not be set.
-   * When the clipboard is empty string and Bracketed Paste Mode is enabled, final Bracket is only sent by pasting.
-   * ZMODEM: The escaped 0x7f and 0xff that is included in ZMODEM header packet can not be restored.
-   * Tera Term(ttermpro.exe) can not run on Windows 95/98/Me/NT4.0.
-   * MACRO: When invalid regular expression is specified at the strreplace command, source string is corrupted.
-     * The result variable returns -1 when invalid regular expression is specified.
+   * After Kanji(receive) is set to EUC and UTF-8 string is shown, new Kanji(Chinese character) may be properly shown when Kanji(receive) is set to UTF-8.
+   * When Kanji(receive) is set to UTF-8, ISO-2022-JP Kanji can not be properly shown with Japanese language setting.
+   * When DeferredLogWriteMode=on is enabled and a log file is closed soon after opening the file, Tera Term rarely halts by dead-lock.
+   * When Log dialog is closed, the memory leak of Tera Term core(ttermpro.exe) is happened.
+   * Windows 7 and Vista: When special operation is done on General setup dialog, an application fault occurs.
+   * When the real time mode is off by using broadcast command, invalid character will be added at the end of string.
+   * MACRO: When closesbox command is executed, the memory leak of Macro core(ttpmacro.exe) is happened.
+   * MACRO: The gethostname, gettitle, getmodemstatus, loginfo and logopen command will rarely be wrong.
  * Misc
-   * upgraded TTSSH to 2.78
-   * upgraded TTProxy to 1.0.0.23
+   * upgraded TTSSH to 2.79
+   * upgraded CygTerm+ to 1.07_29
+   * upgraded TTProxy to 1.0.0.24
+   * upgraded TeraTerm Menu to 1.14
+   * upgraded TTX KanjiMenu Plug-in to 0.1.7
+   * upgraded TTXRecurringCommand Plug-in to 1.05
+   * upgraded Oniguruma to 6.1.2.
 
 ## TTSSH
-### 2016.08.31 (Ver 2.78)
+### 2016.11.30 (Ver 2.77)
 
- * Changes
- * When the filename includes invalid character by SCP receiving, the character is be replaced to "\_".
- * The default value of ScpSendDir entry is changed from "~/" to ""(empty string).
- * Strictly TTSSH command line can be checked. When a part of options(i.e. /ssh-A) is added with unnecessary character(i.e. /ssh-Axx), the string can not be recognized as an option.
+ * Bug fixes
+   * When an Order(CipherOrder, KexOrder, HostKeyOrder, MacOrder, CompOrder) is read from the teraterm.ini file, memory corruption will be occurred.
+   * Tera Term(TTSSH) may hang up while a file is receiving by using SCP.
+ * Misc
+   * upgraded OpenSSL to 1.0.2j
+
+## Cygterm+
+### v1.07_29 2016/11/26 (by maya)
+
+ * Changed the icon image.
 
 ## TTProxy
-### 2016.08.31 (Ver 1.0.0.23)
+### 2016.11.30 (Ver 1.0.0.24)
 
- * The "-noproxy" option is added at command line. The function is same as "-proxy=none://" option that is disabled proxy configuration.
- * The priority(order) of loading TTX plugin is changed from 0 to 10.
+ * When an authentication is used on HTTP proxy, Tera Term(TTProxy) will be crashed.
+ * When an authentication is used on HTTP proxy, the authentication does not be encoded with base64 protocol.
+ * The HTTP proxy connection is changed from HTTP/1.0 to HTTP/1.1.
+
+## TeraTerm Menu
+### 2016.11.30 (Ver 1.14)
+
+ * Updated the TeraTerm icon(teraterm.ico).
+
+## TTX KanjiMenu
+### 2016.11.30 (Ver 0.1.7)
+
+ * When Kanji code is changed, internal status regarding Kanji code of Tera Term core is cleared.
+
+## TTXRecurringCommand
+### 2016.11.30 (Ver 1.05)
+
+ * added new configuration that carriage return can add at end of sending command.
     </releaseNotes>
     <!-- =============================== -->      
 
