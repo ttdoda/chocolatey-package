@@ -1,58 +1,32 @@
 ## Tera Term
-### 2016.11.30 (Ver 4.93)
+### 2017.xx.xx (Ver 4.94)
 
  * Changes
-   * added 48dot icon in the keycode.exe.
+   * added `&u' parameter to log file name that can convert the logon user name.
+   * added new line normalization on pasting. The default is off.
+   * This feature can be enabled on Copy and Paste tab of Additional settings dialog.
+   * added the setflowctrl command.
  * Bug fixes
-   * After Kanji(receive) is set to EUC and UTF-8 string is shown, new Kanji(Chinese character) may be properly shown when Kanji(receive) is set to UTF-8.
-   * When Kanji(receive) is set to UTF-8, ISO-2022-JP Kanji can not be properly shown with Japanese language setting.
-   * When DeferredLogWriteMode=on is enabled and a log file is closed soon after opening the file, Tera Term rarely halts by dead-lock.
-   * When Log dialog is closed, the memory leak of Tera Term core(ttermpro.exe) is happened.
-   * Windows 7 and Vista: When special operation is done on General setup dialog, an application fault occurs.
-   * When the real time mode is off by using broadcast command, invalid character will be added at the end of string.
-   * MACRO: When closesbox command is executed, the memory leak of Macro core(ttpmacro.exe) is happened.
-   * MACRO: The gethostname, gettitle, getmodemstatus, loginfo and logopen command will rarely be wrong.
+   * When Restore setup is called, the AlphaBlend can not be restored immediately.
+   * When Paste<CR> works, the end of data will be added invalid character.
+   * When Kanji(receive) is set to UTF-8, garbled characters will be shown after invalid byte characters are received.
  * Misc
-   * upgraded TTSSH to 2.79
-   * upgraded CygTerm+ to 1.07_29
-   * upgraded TTProxy to 1.0.0.24
-   * upgraded TeraTerm Menu to 1.14
-   * upgraded TTX KanjiMenu Plug-in to 0.1.7
-   * upgraded TTXRecurringCommand Plug-in to 1.05
-   * upgraded Oniguruma to 6.1.2.
+   * upgraded TTSSH to 2.80
+   * upgraded TTXttyrec Plug-in to 1.03
+   * upgraded Oniguruma to 6.1.3.
+   * upgraded SFMT to 1.5.
+   * changed starting method of LogMeTT and TTLEditor installer.
 
 ## TTSSH
-### 2016.11.30 (Ver 2.77)
+### 2017.xx.xx (Ver 2.80)
 
  * Bug fixes
-   * When an Order(CipherOrder, KexOrder, HostKeyOrder, MacOrder, CompOrder) is read from the teraterm.ini file, memory corruption will be occurred.
-   * Tera Term(TTSSH) may hang up while a file is receiving by using SCP.
+   * When SCP receiving is failed, a local file is removed.
  * Misc
-   * upgraded OpenSSL to 1.0.2j
+   * upgraded OpenSSL to 1.0.2k
+   * upgraded zlib to 1.2.11
 
-## Cygterm+
-### v1.07_29 2016/11/26 (by maya)
+## TTXttyrec
+### 2017.xx.xx (Ver 1.03)
 
- * Changed the icon image.
-
-## TTProxy
-### 2016.11.30 (Ver 1.0.0.24)
-
- * When an authentication is used on HTTP proxy, Tera Term(TTProxy) will be crashed.
- * When an authentication is used on HTTP proxy, the authentication does not be encoded with base64 protocol.
- * The HTTP proxy connection is changed from HTTP/1.0 to HTTP/1.1.
-
-## TeraTerm Menu
-### 2016.11.30 (Ver 1.14)
-
- * Updated the TeraTerm icon(teraterm.ico).
-
-## TTX KanjiMenu
-### 2016.11.30 (Ver 0.1.7)
-
- * When Kanji code is changed, internal status regarding Kanji code of Tera Term core is cleared.
-
-## TTXRecurringCommand
-### 2016.11.30 (Ver 1.05)
-
- * added new configuration that carriage return can add at end of sending command.
+  * added [Replay again] entry under [File] menu that can replay again after one relaying.
