@@ -1,5 +1,5 @@
 ## Tera Term
-### 2017.xx.xx (Ver 4.94)
+### 2017.02.28 (Ver 4.94)
 
  * Changes
    * added `&u' parameter to log file name that can convert the logon user name.
@@ -18,7 +18,7 @@
    * changed starting method of LogMeTT and TTLEditor installer.
 
 ## TTSSH
-### 2017.xx.xx (Ver 2.80)
+### 2017.02.28 (Ver 2.80)
 
  * Bug fixes
    * When SCP receiving is failed, a local file is removed.
@@ -27,6 +27,6 @@
    * upgraded zlib to 1.2.11
 
 ## TTXttyrec
-### 2017.xx.xx (Ver 1.03)
+### 2017.02.28 (Ver 1.03)
 
   * added [Replay again] entry under [File] menu that can replay again after one relaying.
