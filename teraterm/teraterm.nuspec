@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>teraterm</id>
-    <version>4.94</version>
+    <version>4.95-rc1</version>
     <packageSourceUrl>https://github.com/TeraTermProject/chocolatey-package/</packageSourceUrl>
     <owners>TeraTerm Project</owners>
     <!-- ============================== -->
@@ -31,37 +31,39 @@ Tera Term is free software terminal emulator which supports:
     </description>
     <releaseNotes>
 ## Tera Term
-### 2017.02.28 (Ver 4.94)
+### 2017.05.xx (Ver 4.95)
 
  * Changes
-   * added `&amp;u' parameter to log file name that can convert the logon user name.
-   * added new line normalization on pasting. The default is off.
-   * This feature can be enabled on Copy and Paste tab of Additional settings dialog.
-   * added the setflowctrl command.
+   * added the notification feature regarding clipboard accessing from the remote host. (Windows Me or 2000 or later)
+   * renamed command line from /NAMEDPIPE to /PIPE option.
+   * When /PIPE option is used as command line, the host name is complemented by these rules:
+     * If the host name begins with a '\', the name is not changed.
+     * If the host name does not include a '\', the '\\.\pipe\' is added at the beginning.
+     * If the host name includes a '\' anywhere but first, before that is treated as server name and after that is treated as pipe name.
+   * added new feature regarding How to scroll the screen when the window size is maximized.
+     * changed default action to the new method. If the action behaves in the same manner as Tera Term 4.94, please set MaximizedBugTweak to 1.
+     * changed MaximizedBugTweak value from on/off to 0/1/2 combination. The "off" is treated as 0, and the "on" is treated as 2.
+   * changed default directory path for receiving a file (Vista or later:Downloads, XP or earlier:My Documents).
  * Bug fixes
-   * When Restore setup is called, the AlphaBlend can not be restored immediately.
-   * When Paste&lt;CR&gt; works, the end of data will be added invalid character.
-   * When Kanji(receive) is set to UTF-8, garbled characters will be shown after invalid byte characters are received.
+   * The port number cannot specify 65535 by the command line option.
+   * When the New connection selects Serial menu, a part of TCP/IP menu is not disabled.
  * Misc
-   * upgraded TTSSH to 2.80
-   * upgraded TTXttyrec Plug-in to 1.03
-   * upgraded Oniguruma to 6.1.3.
-   * upgraded SFMT to 1.5.
-   * changed starting method of LogMeTT and TTLEditor installer.
+   * upgraded TTSSH to 2.81
+   * upgraded Oniguruma to 6.2.0.
+   * NOTICE: The installer does not support Windows 95, 98, Me and NT 4.0. Please use the zip archive version on these Windows.
 
 ## TTSSH
-### 2017.02.28 (Ver 2.80)
+### 2017.05.xx (Ver 2.81)
 
+ * Changes
+   * added the notification feature when remote host uses forwarded agent. (Windows Me or 2000 or later)
+   * added support for changing the user password when using the password authentication.
+   * added support for executing the specified subsystem instead of the shell on connection.
+   * added the /ssh-subsystem option at the command line.
  * Bug fixes
-   * When SCP receiving is failed, a local file is removed.
+   * When agent forwarding is enabled, an application fault is occurred after the remote host sends big packet request.
  * Misc
-   * upgraded OpenSSL to 1.0.2k
-   * upgraded zlib to 1.2.11
-
-## TTXttyrec
-### 2017.02.28 (Ver 1.03)
-
-  * added [Replay again] entry under [File] menu that can replay again after one relaying.
+   * upgraded PuTTY to 0.69
     </releaseNotes>
     <!-- =============================== -->      
 
