@@ -16,7 +16,7 @@
    * The port number cannot specify 65535 by the command line option.
    * When the New connection selects Serial menu, a part of TCP/IP menu is not disabled.
  * Misc
-   * upgraded TTSSH to 2.81
+   * upgraded TTSSH to 2.81.
    * upgraded Oniguruma to 6.2.0.
    * NOTICE: The installer no longer support Windows 95, 98, Me and NT 4.0. Please use the zip archive version on these Windows.
 
@@ -31,4 +31,4 @@
  * Bug fixes
    * When agent forwarding is enabled, an application fault is occurred after the remote host sends big packet request.
  * Misc
-   * upgraded PuTTY to 0.69
+   * upgraded PuTTY to 0.69.
