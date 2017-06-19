@@ -67,9 +67,6 @@ Tera Term is free software terminal emulator which supports:
     </releaseNotes>
     <!-- =============================== -->      
 
-    <dependencies>
-      <dependency id="chocolatey-uninstall.extension" />
-    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
