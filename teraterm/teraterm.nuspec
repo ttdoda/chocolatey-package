@@ -31,39 +31,46 @@ Tera Term is free software terminal emulator which supports:
     </description>
     <releaseNotes>
 ## Tera Term
-### 2017.05.31 (Ver 4.95)
+### 2017.08.31 (Ver 4.96)
 
  * Changes
-   * added new feature regarding How to scroll the screen when the window size is maximized.
-     * changed default action to the new method. If the action behaves in the same manner as Tera Term 4.94, please set MaximizedBugTweak to 1.
-     * changed MaximizedBugTweak value from on/off to 0/1/2 combination. The "off" is treated as 0, and the "on" is treated as 2.
-   * added the notification feature regarding clipboard accessing from the remote host. (Windows Me or 2000 or later)
-   * changed default directory path for receiving a file (Vista or later:Downloads, XP or earlier:My Documents).
-   * renamed command line from /NAMEDPIPE to /PIPE option.
-   * When /PIPE option is used as command line, the host name is complemented by these rules:
-     * If the host name begins with a '\\', the name is not changed.
-     * If the host name does not include a '\\', the '\\\\.\\pipe\\' is added at the beginning.
-     * If the host name includes a '\\' anywhere but first, before that is treated as server name and after that is treated as pipe name.
+   * added support for the configuring of the permitted ISO/IEC 2022 shift functions.
+     * added the ISO2022ShiftFunction entry in the teraterm.ini file. The default is on.
+   * added configuration of timestamp format at the start of log file's line.
+     * added the LogTimestampFormat entry in the teraterm.ini file. The default is "%a %b %e %H:%M:%S.%N %Y".
+     * The default format is changed to RFC 3339 style. Specify the "%a %b %e %H:%M:%S.%N %Y" at the LogTimestampFormat entry to restore before format.
+   * UTC can be used at timestamp format at the start of log file's line.
+     * added the LogTimestampUTC entry in the teraterm.ini file. The default is off.
+   * Hidden font set by OS can be selected with font setting dialog.
+     * The setting can be configured on the General tab of Additional settings dialog.
+   * When the serial port and named pipe can not be opened, the error message contains reason or error code.
+   * When the sendlnbroadcast macro command is used, the carriage return is sent one more time after last parameter.
+   * added the sendlnmulticast command.
  * Bug fixes
-   * The port number cannot specify 65535 by the command line option.
-   * When the New connection selects Serial menu, a part of TCP/IP menu is not disabled.
+   * The response of DECLRMM status query by DECRQM was invalid.
+   * PrnConvFF can not be loaded from TERATERM.INI file.
+   * sendbroadcast and sendlnbroadcast macro command does not work.
+   * sendbroadcast, sendlnbroadcast and sendmulticast macro command can't send the character of 0x00 or 0x01.
  * Misc
-   * upgraded TTSSH to 2.81.
-   * upgraded Oniguruma to 6.2.0.
-   * NOTICE: The installer no longer support Windows 95, 98, Me and NT 4.0. Please use the zip archive version on these Windows.
+   * upgraded TTSSH to 2.82.
+   * upgraded Oniguruma to 6.6.0.
 
 ## TTSSH
-### 2017.05.31 (Ver 2.81)
+### 2017.08.31 (Ver 2.82)
 
  * Changes
-   * added support for changing the user password when using the password authentication.
-   * added support for executing the specified subsystem instead of the shell on connection.
-     * added the /ssh-subsystem option at the command line.
-   * added the notification feature when remote host uses forwarded agent. (Windows Me or 2000 or later)
+   * added support for the PuTTY format ECDSA private key and Ed25519 private key for SSH2 public key authentication.
+   * added support for the SECSH(ssh.com) format ECDSA private key for SSH2 public key authentication.
+   * added support for dynamic port forwarding (SOCKS Proxy).
+   * Output format of some debug log is changed.
  * Bug fixes
-   * When agent forwarding is enabled, an application fault is occurred after the remote host sends big packet request.
+   * The remote-to-local port forwarding which added after connecting to the server does not be enabled on SSH2 connection.
+   * When the terminal size is changed, right terminal size (pixel count) is notified to server on SSH1 connection.
+   * The SSH\_MSG\_UNIMPLEMENTED message is not handled correctly.
+   * Garbage is output in the debug log.
  * Misc
-   * upgraded PuTTY to 0.69.
+   * upgraded OpenSSL to 1.0.2l.
+   * upgraded PuTTY to 0.70.
     </releaseNotes>
     <!-- =============================== -->      
 
