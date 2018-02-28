@@ -1,49 +1,28 @@
 ## Tera Term
 ### 2017.11.30 (Ver 4.97)
 
-  * Changes
-    * The response of DA2 request is changed.
-    * On telnet connection, the terminal speed is notified to the server.
-      * added support for the Telnet Terminal Speed Option.
-      * added the TerminalSpeed entry in the teraterm.ini file. The default is 38400.
-    * added configuration of timestamp type at the start of log file's line.
-      * added "Elapsed Time (Logging)" and "Elapsed Time (Connection)" as timestamp type.
-      * The timestamp type can be changed on Log dialog and Additional settings dialog.
-      * The LogTimestampUTC setting is obsolete, use the timestamp type setting instead.
-  * Buf fixes
-    * The response of DECRQSS control sequence was invalid.
-    * On telnet connection, the terminal size is not notified correctly if terminal width or height is 255.
-    * When the [View Log] on the [File] is called, the editor does not invoked.
-    * Fix the problem of the log option settings on the Log tab of Additional settings dialog.
-      * PlainText and Timestamp setting is not applied.
-      * Changes to the log option settings are applied when the dialog is cancelled.
+### 2018.02.28 (Ver 4.98)
+
+  * Bug fixes
+    * The operability at screen edge is improved when mouse tracking is enabled.
   * Misc
-    * upgraded TTSSH to 2.83.
-    * upgraded TeraTerm Menu to 1.15.
-    * upgraded Oniguruma to 6.6.1.
+    * upgraded TTSSH to 2.84.
+    * upgraded Oniguruma to 6.7.1.
 
 ## TTSSH
 ### 2017.11.30 (Ver 2.83)
+2018.02.28 (Ver 2.84)
 
   * Changes
-    * added support for SSH2 symmetric key cipher algorithms:
-      * aes128-gcm@openssh.com
-      * aes256-gcm@openssh.com
-    * added support for SSH2 MAC algorithms:
-      * hmac-sha1-etm@openssh.com
-      * hmac-sha2-256-etm@openssh.com
-      * hmac-sha2-512-etm@openssh.com
-      * hmac-ripemd160-etm@openssh.com
-      * hmac-md5-etm@openssh.com
-      * hmac-sha1-96-etm@openssh.com
-      * hmac-md5-96-etm@openssh.com
-    * The terminal speed notifies to the server can be changed by setting.
-      * added the TerminalSpeed entry in the teraterm.ini file. The default is 38400.
-      * The default value of the terminal speed notifies to the server is changed to 38400 bps.
+    * added support for SSH_MSG_USERAUTH_BANNER SSH message.
+      * added the AuthBanner entry in the teraterm.ini file. The default is 1(display to VT window).
+    * The minimum group size of the Diffie-Hellman group exchange key exchange method is increased to 2048. (RFC 8270)
+      * To change to the previous behavior, set the GexMinimalGroupSize entry in teraterm.ini file to 1024.
+  * Bug fixes
+    * Application fault is occurred if server proposes a very long string in the algorithm negotiation.
+    * When using aes128-gcm@openssh.com or aes256-gcm@openssh.com as symmetric cipher algorithm, connection is terminated if MAC algorithm cannot negotiate.
+    * The [SSH SCP] entry of [File] menu can not be disabled on serial connection.
+    * When using aes128-gcm@openssh.com or aes256-gcm@openssh.com as symmetric cipher algorithm, un-used MAC algorithm is displayed on "About TTSSH" dialog.
+    * The fingerprint of server host key on "About TTSSH" dialog may display unused key method on same server connection.
   * Misc
-    * upgraded OpenSSL to 1.0.2m.
-
-## TeraTerm Menu
-### 2017.11.30 (Ver 1.15)
-
- * When the ttpmenu.ini file is used, the buffer size including whole host setting name is expanded from 2.6KB to 10KB.
+    * upgraded OpenSSL to 1.0.2n.
