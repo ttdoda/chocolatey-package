@@ -1,28 +1,28 @@
 ## Tera Term
-### 2017.11.30 (Ver 4.97)
-
-### 2018.02.28 (Ver 4.98)
-
-  * Bug fixes
-    * The operability at screen edge is improved when mouse tracking is enabled.
-  * Misc
-    * upgraded TTSSH to 2.84.
-    * upgraded Oniguruma to 6.7.1.
-
-## TTSSH
-### 2017.11.30 (Ver 2.83)
-2018.02.28 (Ver 2.84)
+### 2018.05.31 (Ver 4.99)
 
   * Changes
-    * added support for SSH_MSG_USERAUTH_BANNER SSH message.
-      * added the AuthBanner entry in the teraterm.ini file. The default is 1(display to VT window).
-    * The minimum group size of the Diffie-Hellman group exchange key exchange method is increased to 2048. (RFC 8270)
-      * To change to the previous behavior, set the GexMinimalGroupSize entry in teraterm.ini file to 1024.
+    * added support for the DECSACE control sequence.
+      * default affected area of DECCARA and DECRARA control sequence is changed to stream.
+    * Improved the behavior of window resizing.
+    * Accept service name instead of the port number on the command line option.
+    * added the /SPEED= command line option which behavior is same as the /BAUDE= command line option.
+    * added the setspeed command.
   * Bug fixes
-    * Application fault is occurred if server proposes a very long string in the algorithm negotiation.
-    * When using aes128-gcm@openssh.com or aes256-gcm@openssh.com as symmetric cipher algorithm, connection is terminated if MAC algorithm cannot negotiate.
-    * The [SSH SCP] entry of [File] menu can not be disabled on serial connection.
-    * When using aes128-gcm@openssh.com or aes256-gcm@openssh.com as symmetric cipher algorithm, un-used MAC algorithm is displayed on "About TTSSH" dialog.
-    * The fingerprint of server host key on "About TTSSH" dialog may display unused key method on same server connection.
+    * When the mouse tracking is enabled, the menu can not be selected after clicking the screen.
+    * The target area of the DECCARA (Change Attributes in Rectangular Area) and DECRARA (Reverse Attributes in Rectangular Area) control sequence is invalid.
+    * The DECCARA control sequence breaks kanji character.
+    * The DECCARA control sequence breaks the color of cells.
   * Misc
-    * upgraded OpenSSL to 1.0.2n.
+    * upgraded TTSSH to 2.85.
+    * upgraded Oniguruma to 6.8.2.
+
+## TTSSH
+### 2018.05.31 (Ver 2.85)
+
+  * Changes
+    * in /auth= commandline option, accept keyboard-interactive keyword.
+  * Bug fixes
+    * Can't open normal ssh (shell) session after using ssh subsystem.
+  * Misc
+    * upgraded OpenSSL to 1.0.2o.
