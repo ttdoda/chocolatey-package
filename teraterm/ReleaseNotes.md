@@ -1,28 +1,25 @@
 ## Tera Term
-### 2018.05.31 (Ver 4.99)
+### 2018.08.31 (Ver 4.100)
 
   * Changes
-    * added support for the DECSACE control sequence.
-      * default affected area of DECCARA and DECRARA control sequence is changed to stream.
-    * Improved the behavior of window resizing.
-    * Accept service name instead of the port number on the command line option.
-    * added the /SPEED= command line option which behavior is same as the /BAUDE= command line option.
-    * added the setspeed command.
-  * Bug fixes
-    * When the mouse tracking is enabled, the menu can not be selected after clicking the screen.
-    * The target area of the DECCARA (Change Attributes in Rectangular Area) and DECRARA (Reverse Attributes in Rectangular Area) control sequence is invalid.
-    * The DECCARA control sequence breaks kanji character.
-    * The DECCARA control sequence breaks the color of cells.
+    * added support for multiple files' drag&amp;drop.
+    * Functional enhancement: Confirmation dialog by using drag&amp;drop a file.
+    * Window size is maximized when the titlie bar is double-clicked if "Term size = win size" setting is on.
+    * added the Title format configuration on the General tab of the Additional settings dialog.
   * Misc
-    * upgraded TTSSH to 2.85.
-    * upgraded Oniguruma to 6.8.2.
+    * upgraded TTSSH to 2.86.
+    * upgraded TTXResizeMenu Plug-in to 1.04
 
 ## TTSSH
-### 2018.05.31 (Ver 2.85)
+### 2018.08.31 (Ver 2.86)
 
-  * Changes
-    * in /auth= commandline option, accept keyboard-interactive keyword.
   * Bug fixes
-    * Can't open normal ssh (shell) session after using ssh subsystem.
+    * SSH Forwarding dialog shows incorrect setting after the connection is closed.
   * Misc
-    * upgraded OpenSSL to 1.0.2o.
+    * upgraded OpenSSL to 1.0.2p.
+
+## TTXResizeMenu
+### 2018.08.31 (Ver 1.04)
+
+  * Fixed an issue where TTXResizeMenu can not be loaded on Windows 95/NT4.0.
+  * Fixed an issue where TTXResizeMenu is not display on menu on Windows 95/98/Me/NT4.0.
