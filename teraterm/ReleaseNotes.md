@@ -1,5 +1,5 @@
 ## Tera Term
-### 2018.11.xx (Ver 4.101)
+### 2018.11.30 (Ver 4.101)
 
  * Changes
    * added support for following dtterm window manipulation sequences.
@@ -20,12 +20,12 @@
    * upgraded Oniguruma to 6.9.0.
 
 ## TTSSH
-### 2018.11.xx (Ver 2.87)
+### 2018.11.30 (Ver 2.87)
 
  * Misc
    * upgraded OpenSSL to 1.0.2q.
 
 ## TTXResizeMenu
-### 2018.11.xx (Ver 1.05)
+### 2018.11.30 (Ver 1.05)
 
  * added menu id to increase/decrease window size. (for shortcut keys)
