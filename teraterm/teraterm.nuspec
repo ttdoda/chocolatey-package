@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>teraterm</id>
-    <version>4.101</version>
+    <version>4.102</version>
     <packageSourceUrl>https://github.com/TeraTermProject/chocolatey-package/</packageSourceUrl>
     <owners>TeraTerm Project</owners>
     <!-- ============================== -->
@@ -11,7 +11,7 @@
     <authors>T. Teranishi, TeraTerm Project</authors>
     <projectUrl>https://ttssh2.osdn.jp/</projectUrl>
     <iconUrl>http://cdn.rawgit.com/TeraTermProject/chocolatey-package/master/icons/teraterm.png</iconUrl>
-    <copyright>(c) 1994-1998 T. Teranishi, 2004-2018 TeraTerm Project</copyright>
+    <copyright>(c) 1994-1998 T. Teranishi, 2004-2019 TeraTerm Project</copyright>
     <licenseUrl>https://ttssh2.osdn.jp/manual/en/about/copyright.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://osdn.net/projects/ttssh2/scm/svn/</projectSourceUrl>
@@ -31,36 +31,33 @@ Tera Term is free software terminal emulator which supports:
     </description>
     <releaseNotes>
 ## Tera Term
-### 2018.11.30 (Ver 4.101)
+### 2019.02.28 (Ver 4.102)
 
  * Changes
-   * added support for following dtterm window manipulation sequences.
-     * 10: Full-screen mode
-     * 13;2: Report window position. (text area)
-     * 14;2: Report window size. (whole window)
-     * 15: Report root window size in pixels.
-     * 16: Report character size in pixels.
-   * The behavior of following dtterm window manipulation sequence was changed.
-     * 14: Report window size sequence: report text area size instead of whole window size.
-   * The left and right margin mode does not be reset when window size is changed.
-   * The `/' character can be treated as path separator by using the command line option receiving a file name.
+   * The AlphaBlend VT window can be configured as a different value for each active and inative.
+   * The value of transparency can be temporarily changed by moving the mouse wheel on the title bar of the VT window.
+   * The internal implemention of the VT window was speeded up.
+   * UTF-8: Four bytes character can not be shown yet but can be decoded, the impact range of character corruption was be minimized.
+   * The language code(CodePage) of the "Terminal ([Setup] menu)" dialog(Unicode usage).
+   * MACRO: The macro file can support UTF-8 and UTF-16(with BOM) encoding.
+   * MACRO: The getfileattr command can be based on the current directory same as other command.
+   * MARCO: The fileopen command can cause an error when a file is not found with read only mode.
  * Bug fixes
-   * The plugin compiled before 4.100 can not called because the DLL's calling convention is changed in Tera Term 4.100.
+   * When the AlphaBlend window is enabled, an application fault occurs on Windows 10.
  * Misc
-   * upgraded TTSSH to 2.87.
-   * upgraded TTXResizeMenu Plug-in to 1.05
-   * upgraded Oniguruma to 6.9.0.
+   * upgraded TTSSH to 2.88.
+   * upgraded Oniguruma to 6.9.1.
 
 ## TTSSH
-### 2018.11.30 (Ver 2.87)
+### 2019.02.28 (Ver 2.88)
 
+ * Changes
+   * added /ssh-N commandline option to disable a shell session when starting a connection.
+   * Default state of bcrypt KDF checkbox on SSH Key generator dialog is changed to on.
+ * Bug fixes
+   * Can't change password on SSH Change Password dialog when old password is empty string.
  * Misc
-   * upgraded OpenSSL to 1.0.2q.
-
-## TTXResizeMenu
-### 2018.11.30 (Ver 1.05)
-
- * added menu id to increase/decrease window size. (for shortcut keys)
+   * upgraded OpenSSL to 1.0.2r.
     </releaseNotes>
     <!-- =============================== -->      
 

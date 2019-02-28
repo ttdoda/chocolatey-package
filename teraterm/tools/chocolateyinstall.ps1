@@ -2,7 +2,7 @@
 
 $packageName= 'teraterm'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://osdn.net/dl/ttssh2/teraterm-4.101.exe'
+$url        = 'https://osdn.net/dl/ttssh2/teraterm-4.102.exe'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -12,7 +12,7 @@ $packageArgs = @{
 
   softwareName  = 'Tera Term *'
 
-  checksum      = 'd90dcc02d67f9cfc441ecd67394342db205466e2eeb6bbc756feba2be0b09923'
+  checksum      = '7479cb28eab4cb84f1a803c8276af74a9b9fb95023ce262962afc6d66fe52f18'
   checksumType  = 'sha256'
 
   silentArgs   = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
