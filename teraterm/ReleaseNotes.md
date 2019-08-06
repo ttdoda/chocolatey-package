@@ -1,28 +1,33 @@
 ## Tera Term
-### 2019.02.28 (Ver 4.102)
+### 2019.06.15 (Ver 4.103)
 
  * Changes
-   * The AlphaBlend VT window can be configured as a different value for each active and inative.
-   * The value of transparency can be temporarily changed by moving the mouse wheel on the title bar of the VT window.
-   * The internal implemention of the VT window was speeded up.
-   * UTF-8: Four bytes character can not be shown yet but can be decoded, the impact range of character corruption was be minimized.
-   * The language code(CodePage) of the "Terminal ([Setup] menu)" dialog(Unicode usage).
-   * MACRO: The macro file can support UTF-8 and UTF-16(with BOM) encoding.
-   * MACRO: The getfileattr command can be based on the current directory same as other command.
-   * MARCO: The fileopen command can cause an error when a file is not found with read only mode.
+   * added support for High DPI experimentally.
+     * The default setting is disabled. When DPIAware=on is set in [Tera Term] of teraterm.ini file, this feature is enabled.
+     * However, this is only available for Windows 10 Version 1703 or later.
+   * The font submenu is newly added, and added support for configure the dialog font.
+     * The default font is same as before.
+   * the pop-up menu of TEK Window is not displayed correctly.
+   * When the font file(TSPECIAL1.TTF) displaying ruled line is not installed, the file is loaded from same directory as ttermpro.exe.
+   * When the file sending by kermit protocol, notifies the file modification time instead of creation time.
+   * MACRO: Store exec command result to result variable.
  * Bug fixes
-   * When the AlphaBlend window is enabled, an application fault occurs on Windows 10.
+   * Display position of IME's conversion candidate window can not follow cursor position. This bug was introduced in 4.102.
+   * Can't display character such as U+2014 EM DASH, U+2212 MINUS SIGN, U+301C WAVE DASH etc. This bug was introduced in 4.102.
+   * MACRO: Fix handle leak when exec command is executed.
  * Misc
-   * upgraded TTSSH to 2.88.
-   * upgraded Oniguruma to 6.9.1.
+   * upgraded TTSSH to 2.89.
+   * upgraded Oniguruma to 6.9.2.
 
 ## TTSSH
-### 2019.02.28 (Ver 2.88)
+### 2019.06.15 (Ver 2.89)
 
  * Changes
-   * added /ssh-N commandline option to disable a shell session when starting a connection.
-   * Default state of bcrypt KDF checkbox on SSH Key generator dialog is changed to on.
+   * Windows logon user name can be configured as the default user name.
+     * added the DefaultUserType entry in the teraterm.ini file. The default is 1(Using a specified default user name).
+   * added a selector whether to use control characters in the Inputing Password and Passphrase of the authentication dialog.
  * Bug fixes
-   * Can't change password on SSH Change Password dialog when old password is empty string.
+   * garbage data is added to the CipherOrder and MacOrder settings when saving settings.
+   * when echo flag is 1 in the server's authentication informatin message, password string is masked on the keyboard-interactive authentication dialog.
  * Misc
-   * upgraded OpenSSL to 1.0.2r.
+   * upgraded OpenSSL to 1.0.2s.
