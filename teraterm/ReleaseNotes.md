@@ -1,33 +1,44 @@
 ## Tera Term
-### 2019.06.15 (Ver 4.103)
-
+### 2019.xx.xx (Ver 4.104)
  * Changes
-   * added support for High DPI experimentally.
-     * The default setting is disabled. When DPIAware=on is set in [Tera Term] of teraterm.ini file, this feature is enabled.
-     * However, this is only available for Windows 10 Version 1703 or later.
-   * The font submenu is newly added, and added support for configure the dialog font.
-     * The default font is same as before.
-   * the pop-up menu of TEK Window is not displayed correctly.
-   * When the font file(TSPECIAL1.TTF) displaying ruled line is not installed, the file is loaded from same directory as ttermpro.exe.
-   * When the file sending by kermit protocol, notifies the file modification time instead of creation time.
-   * MACRO: Store exec command result to result variable.
+   * The Disabling text selection when the window is activated by mouse configuration can be set up on the Additional settings dialog.
+   * The environment variable included in directory for file transfers becomes to be expanded.
+   * Unspecified string font in IME uses your defined font.
+   * Added help button on Additional settings dialog.
+   * MARCO: The fileopen command does not cause an error when a file can not be opened. Reverted changes in 4.102.
+   * MACRO: When filetruncate command does not cause an error when a file can not be opened, or file size can not be changed.
  * Bug fixes
-   * Display position of IME's conversion candidate window can not follow cursor position. This bug was introduced in 4.102.
-   * Can't display character such as U+2014 EM DASH, U+2212 MINUS SIGN, U+301C WAVE DASH etc. This bug was introduced in 4.102.
-   * MACRO: Fix handle leak when exec command is executed.
+   * When UTF-8 characters received, 4-byte UTF-8 characters are miss-decoded.
+   * When the Active Window Tracking is enabled, mouse cursor won't be active in Tera Term window. This bug was introduced in 4.103.
+   * The session number of window title is always 1. This bug was introduced in 4.103.
+   * When the font selection dialog is used while undetermined characters of IME are displayed , the font ot IME always is changed.
+   * When the locale setting is default(japanese) or invalid on English version of Windows, an application fault immediately occurs after starting Tera Term.
+   * A big file can not send by using [File]/[Send file..]. This bug was introduced in 4.103.
+   * Cancel printing dialog can not be shown. This bug was introduced in 4.103.
+   * The plugin compiled before 4.103 can not called because the DLL's calling convention is changed in Tera Term 4.103.
+   * MACRO: listbox command can not adjust the width of list according to the window size. This bug was introduced in 4.103.
+   * MACRO: filecopy command may not store the result to result system variable.
+   * MACRO: filelock and fileunlock command always fail. This bug was introduced in 4.101.
+   * MACRO: When the first byte of the file is matched by using filestrseek2 command, the file pointer is invalid. This bug was introduced in 4.101.
  * Misc
-   * upgraded TTSSH to 2.89.
-   * upgraded Oniguruma to 6.9.2.
+   * upgraded Oniguruma to 6.9.3.
+   * upgraded TTSSH to 2.90.
+   * upgraded TTProxy to 1.0.0.25.
 
 ## TTSSH
-### 2019.06.15 (Ver 2.89)
-
- * Changes
-   * Windows logon user name can be configured as the default user name.
-     * added the DefaultUserType entry in the teraterm.ini file. The default is 1(Using a specified default user name).
-   * added a selector whether to use control characters in the Inputing Password and Passphrase of the authentication dialog.
+### 2019.xx.xx (Ver 2.90)
  * Bug fixes
-   * garbage data is added to the CipherOrder and MacOrder settings when saving settings.
-   * when echo flag is 1 in the server's authentication informatin message, password string is masked on the keyboard-interactive authentication dialog.
- * Misc
-   * upgraded OpenSSL to 1.0.2s.
+   * SSH2: When SSH communication is slow by using port forwarding, an application fault is occurred due to increase memory consumption.
+   * SSH2: When SCP transfer dialog is closed, the directory of file transfer setting and the SCP destination path setting may not be updated.
+   * SSH2: When SCP transfer is started on Windows 95/98/Me, an application fault occurs.
+   * SSH1: When the destination port number is other than 22, an application fault may be occurred after the host key is newly written to known_hosts file.
+   * SSH1: The rhosts authentication could not be performed at all.
+
+## TTProxy
+### 2019.xx.xx (Ver 1.0.0.25)
+ * Changes
+   * When the negotiation is failed with SOCKS4 and 5, an error information is added to message.
+ * Bug fixes
+   * Bug fix: Depending on OS, setup dialog is not working correctly. This bug was introduced in 4.103.
+   * Bug fix: When the hostname setting is domain, IPv6 and IPv4 fallback does not work well. And also, when you can not connect to the proxy server, Connection refused dialog is shown three times in a row.
+   * Bug fix: When data can not receive from SOCKS server during negotiation with SOCKS4 and 5, the data may not be handled as an error.
