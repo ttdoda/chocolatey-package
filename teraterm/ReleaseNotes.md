@@ -1,5 +1,5 @@
 ## Tera Term
-### 2019.xx.xx (Ver 4.104)
+### 2019.08.31 (Ver 4.104)
  * Changes
    * The Disabling text selection when the window is activated by mouse configuration can be set up on the Additional settings dialog.
    * The environment variable included in directory for file transfers becomes to be expanded.
@@ -26,7 +26,7 @@
    * upgraded TTProxy to 1.0.0.25.
 
 ## TTSSH
-### 2019.xx.xx (Ver 2.90)
+### 2019.08.31 (Ver 2.90)
  * Bug fixes
    * SSH2: When SSH communication is slow by using port forwarding, an application fault is occurred due to increase memory consumption.
    * SSH2: When SCP transfer dialog is closed, the directory of file transfer setting and the SCP destination path setting may not be updated.
@@ -35,7 +35,7 @@
    * SSH1: The rhosts authentication could not be performed at all.
 
 ## TTProxy
-### 2019.xx.xx (Ver 1.0.0.25)
+### 2019.08.31 (Ver 1.0.0.25)
  * Changes
    * When the negotiation is failed with SOCKS4 and 5, an error information is added to message.
  * Bug fixes
