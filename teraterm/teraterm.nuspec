@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>teraterm</id>
-    <version>4.104</version>
+    <version>4.105</version>
     <packageSourceUrl>https://github.com/TeraTermProject/chocolatey-package/</packageSourceUrl>
     <owners>TeraTerm Project</owners>
     <!-- ============================== -->
@@ -31,49 +31,92 @@ Tera Term is free software terminal emulator which supports:
     </description>
     <releaseNotes>
 ## Tera Term
-### 2019.08.31 (Ver 4.104)
- * Changes
-   * The Disabling text selection when the window is activated by mouse configuration can be set up on the Additional settings dialog.
-   * The environment variable included in directory for file transfers becomes to be expanded.
-   * Unspecified string font in IME uses your defined font.
-   * Added help button on Additional settings dialog.
-   * MARCO: The fileopen command does not cause an error when a file can not be opened. Reverted changes in 4.102.
-   * MACRO: When filetruncate command does not cause an error when a file can not be opened, or file size can not be changed.
- * Bug fixes
-   * When UTF-8 characters received, 4-byte UTF-8 characters are miss-decoded.
-   * When the Active Window Tracking is enabled, mouse cursor won't be active in Tera Term window. This bug was introduced in 4.103.
-   * The session number of window title is always 1. This bug was introduced in 4.103.
-   * When the font selection dialog is used while undetermined characters of IME are displayed , the font ot IME always is changed.
-   * When the locale setting is default(japanese) or invalid on English version of Windows, an application fault immediately occurs after starting Tera Term.
-   * A big file can not send by using [File]/[Send file..]. This bug was introduced in 4.103.
-   * Cancel printing dialog can not be shown. This bug was introduced in 4.103.
-   * The plugin compiled before 4.103 can not called because the DLL's calling convention is changed in Tera Term 4.103.
-   * MACRO: listbox command can not adjust the width of list according to the window size. This bug was introduced in 4.103.
-   * MACRO: filecopy command may not store the result to result system variable.
-   * MACRO: filelock and fileunlock command always fail. This bug was introduced in 4.101.
-   * MACRO: When the first byte of the file is matched by using filestrseek2 command, the file pointer is invalid. This bug was introduced in 4.101.
- * Misc
-   * upgraded Oniguruma to 6.9.3.
-   * upgraded TTSSH to 2.90.
-   * upgraded TTProxy to 1.0.0.25.
+### 2019.12.7 (Ver 4.105)
+  * Changes
+    * Added SFMT information on version dialog.
+    * Changed of indication from "Protocol" to "IP version" and from "UNSPEC" to "AUTO" on New connection dialog.
+    * When the opacity value of the window is temporarily changed by operating the mouse wheel on the title bar of VT window, the tooltip of the opacity value is shown.
+    * The location of resizing tooltip is automatically moved to coordinates after resizing.
+    * Added slider for specify the opacity values on the Visual tab of the Additional settings dialog. When transparency is not available, made opacity not changeable.
+    * Eterm look-feel: Added the Mixed ThemeFile to Background configuration. Also, added the BGIgnoreThemeFile entry in the teraterm.ini file. The default value is off.
+    * When the opacity values of the Additional settings dialog is input over than 255, the value is automatically changed to 255 over the dialog.
+    * Added support for REP control sequence.
+    * Added support for xterm ED 3 (clear scroll buffer) control sequence.
+      * Added the "Accept clearing scroll buffer from remote" setting on the Control Sequence tab of the Additional settings dialog. The default value is off.
+    * Added /OSC52= command line option for change the "Clipboard access from remote" setting.
+    * Added the [Pause Logging] and the [Stop Logging] menu into the [File] menu.
+    * The start of the text selection with the mouse can be delayed by setting.
+      * Added the MouseSelectStartDelay entry in the teraterm.ini file. The default value is 0.
+    * Serial port connection
+      * Added support for hardware flow control DSR/DTR with serial connection.
+	* The hardware is renamed to RTS/CTS, and DSR/DTR is newly added on the Flow control of Serial port ([Setup] menu).
+	* MACRO: The DSR/DTR can be specified in setflowctrl command.
+      * The [Setup]-[Serial port] dialog can be called even while TCP/IP connection.
+      * The title of [Setup]-[Serial port] dialog is changed from "Serial port setup" to "Serial port setup and connection".
+      * The detail information of COM port is added on the [Setup]-[Serial port] dialog.
+      * The tooltip of the speed setting is added on the [Setup]-[Serial port] dialog.
+      * The OK button notation in the [Setup]-[Serial port] dialog is changed referring to the connection state.
+      * The OK button can not be pressed in the [Setup]-[Serial port] dialog when no COM ports are available.
+      * Added /CDATABIT=, /CPARITY=, /CSTOPBIT=, /CFLOWCTRL=, /CDELAYPERCHAR=, /CDELAYPERLINE= command line options.
+    * MACRO: When setdlgpos macro command has no argument, the dialog box is located on the default position.
+    * MACRO: The dialog position specified by setdlgpos becomes to not be out of range in display.
+  * Bug fixes
+    * The tooltip during resizing can not be displayed on the left and top edge of the desktop. This bug was introduced in 4.103.
+    * Eterm look-feel: When an image file is randomly selected with the wallpaper, invalid file may be selected.
+    * The help button of File-Log, File-Transfer, Setup-Font and Printer dialog does not work well. This bug was introduced in 4.104.
+    * Fixed a problem that TTIMESV (Save IME status) / TTIMERS (Restore IME status) control sequences do not work.
+    * The help button on the printer dialog can not be shown from Windows 2000 to 10. The help button on the printer dialog can be shown on all Windows except Windows95.
+    * The macro window tries not to terminate when ESC key is pressed. This bug was introduced in 4.103.
+    * Tera Term tries not to terminate when TEK window is closed. This bug was introduced in 4.103.
+    * When the DPI is changed while menu bar hidden, the window size is correctly adjusted.
+    * When DPI is changed, an application fault occurs on Windows 8.1.
+    * The window title is garbled when receiving the window title setting control sequence which contains the kanji characters.
+    * MACRO: The button of yesnobox selected with left or right arrow key is reversed.
+    * The help button on the Save setup, Restore setup and Load key map dialog can not be shown.
+    * Save setup dialog shows incorrectly "Open as read-only" check-box on Windows95/98/NT4.0.
+    * MACRO: Error is displayed correctly when string constant is not terminated.
+  * Misc
+    * Bug fix: A font(TSPECIAL1.TTF) copy may fail when Tera Term installs from the installer.
+    * NOTE: CygTerm+ binary included in the installer becomes to be supported on Windows Vista or later. Please build CygTerm+'s source code by using Cygwin for older Windows, if CygTerm+ wants to run on older Windows.
+    * upgraded TTSSH to 2.91.
+    * upgraded TTProxy to 1.0.0.26.
+    * upgraded TTXResizeMenu Plug-in to 1.06.
+    * upgraded TTXttyrec Plug-in to 1.04.
+    * Changed e-mail address of Contacting the author.
 
 ## TTSSH
-### 2019.08.31 (Ver 2.90)
- * Bug fixes
-   * SSH2: When SSH communication is slow by using port forwarding, an application fault is occurred due to increase memory consumption.
-   * SSH2: When SCP transfer dialog is closed, the directory of file transfer setting and the SCP destination path setting may not be updated.
-   * SSH2: When SCP transfer is started on Windows 95/98/Me, an application fault occurs.
-   * SSH1: When the destination port number is other than 22, an application fault may be occurred after the host key is newly written to known_hosts file.
-   * SSH1: The rhosts authentication could not be performed at all.
+### 2019.12.7 (Ver 2.91)
+  * Changes
+    * Changed of indication from "Protocol" to "IP version" and from "UNSPEC" to "AUTO" on New connection dialog.
+    * The display timing of the user authentication dialog is changed to display after the known_hosts dialog.
+    * The LogLevel entry is added on the Setup dialog.
+    * The help button are added on the Setup dialog, Authentication Setup dialog, Forwarding dialog and Key Generator dialog.
+    * When the network is disconnected from SSH server side, the known_hosts and user authentication dialog are automatically closed while the dialog is shown.
+    * Changed the error message when unable to open local file.
+  * Bug fixes
+    * The same messages may be included on MessageBox displaying.
+    * When the network is disconnected from SSH server side, an application fault may be occurred while known_hosts dialog is shown.
+    * SSH1: The /nosecuritywarning option does not work well.
+    * The problem is improved in the user authentication dialog that the delay occurs when the focus is moved from the user name to passphrase by using TAB key after entering the user name.
+    * When the user name is left blank in the user authentication dialog, the focus may not be moved from the user name to the pull-down menu on the right side with TAB key.
+    * Fixed a port forwarding issue that closes the client connection before completing all data transmission.
+    * Incorrect process ID is recorded in TTSSH.LOG before connecting.
+    * Authentication banner cannot display correctly when banner string contains character other than US-ASCII.
+  * Misc
+    * upgraded OpenSSL from 1.0.2s to 1.1.1d.
 
 ## TTProxy
-### 2019.08.31 (Ver 1.0.0.25)
- * Changes
-   * When the negotiation is failed with SOCKS4 and 5, an error information is added to message.
- * Bug fixes
-   * Bug fix: Depending on OS, setup dialog is not working correctly. This bug was introduced in 4.103.
-   * Bug fix: When the hostname setting is domain, IPv6 and IPv4 fallback does not work well. And also, when you can not connect to the proxy server, Connection refused dialog is shown three times in a row.
-   * Bug fix: When data can not receive from SOCKS server during negotiation with SOCKS4 and 5, the data may not be handled as an error.
+### 2019.12.7 (Ver 1.0.0.26)
+  * Bug fixes
+    * When the HTTP proxy connection fails and the status code is other than 400,401,403,405,406,407, invalid string is shown in the message box.
+
+## TTXResizeMenu
+### 2019.12.7 (Ver 1.06)
+  * Fixed the access key for the 16th and subsequent entries in the menu.
+
+## TTXttyrec
+### 2019.12.7 (Ver 1.04)
+  * Bug fix: Unexpected pauses and playback speed changes occur when replaying the editing by Vim.
     </releaseNotes>
     <!-- =============================== -->      
 
