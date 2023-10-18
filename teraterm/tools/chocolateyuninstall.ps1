@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 
 $packageName = 'teraterm'
-$softwareName = 'Tera Term *'
+$softwareName = 'Tera Term 4.*'
 $installerType = 'EXE' 
 
 if ($installerType -ne 'MSI') {
