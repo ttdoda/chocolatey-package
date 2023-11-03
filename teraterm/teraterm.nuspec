@@ -14,10 +14,10 @@
     <copyright>(c) 1994-1998 T. Teranishi, 2004-2023 TeraTerm Project</copyright>
     <licenseUrl>https://ttssh2.osdn.jp/manual/en/about/copyright.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>https://github.com/TeraTermProject/teraterm-mirror-gitsvn</projectSourceUrl>
+    <projectSourceUrl>https://github.com/TeraTermProject/teraterm</projectSourceUrl>
     <docsUrl>https://ttssh2.osdn.jp/manual/en/</docsUrl>
     <!--<mailingListUrl></mailingListUrl>-->
-    <bugTrackerUrl>https://github.com/TeraTermProject/osdn-download/issues</bugTrackerUrl>
+    <bugTrackerUrl>https://github.com/TeraTermProject/teraterm/issues</bugTrackerUrl>
     <tags>teraterm terminal ssh telnet serial admin</tags>
     <summary>Tera Term is free software terminal emulator supporting ssh, telnet and serial connection.</summary>
     <description>

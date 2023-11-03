@@ -2,7 +2,7 @@
 
 $packageName= 'teraterm'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/TeraTermProject/osdn-download/releases/download/teraterm-4_107/teraterm-4.107.exe'
+$url        = 'https://github.com/TeraTermProject/teraterm/releases/download/v4.107/teraterm-4.107.exe'
 
 $packageArgs = @{
   packageName   = $packageName
