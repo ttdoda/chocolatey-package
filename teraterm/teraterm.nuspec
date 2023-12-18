@@ -9,13 +9,13 @@
 
     <title>Tera Term</title>
     <authors>T. Teranishi, TeraTerm Project</authors>
-    <projectUrl>https://ttssh2.osdn.jp/</projectUrl>
+    <projectUrl>https://teratermproject.github.io/index-en.html</projectUrl>
     <iconUrl>http://cdn.rawgit.com/TeraTermProject/chocolatey-package/master/icons/teraterm.png</iconUrl>
     <copyright>(c) 1994-1998 T. Teranishi, 2004-2023 TeraTerm Project</copyright>
-    <licenseUrl>https://ttssh2.osdn.jp/manual/en/about/copyright.html</licenseUrl>
+    <licenseUrl>https://teratermproject.github.io/manual/4/en/about/copyright.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/TeraTermProject/teraterm</projectSourceUrl>
-    <docsUrl>https://ttssh2.osdn.jp/manual/en/</docsUrl>
+    <docsUrl>https://teratermproject.github.io/manual/4/en/</docsUrl>
     <!--<mailingListUrl></mailingListUrl>-->
     <bugTrackerUrl>https://github.com/TeraTermProject/teraterm/issues</bugTrackerUrl>
     <tags>teraterm terminal ssh telnet serial admin</tags>
